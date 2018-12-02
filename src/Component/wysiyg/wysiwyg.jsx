@@ -27,7 +27,7 @@ class Wysiwyg extends Component {
                 <button type="button" onClick={this.textUnderline} className="btn btn-primary font-size-16"><u>U</u></button>
                 <button type="button" onClick={this.addhyperlink} className="btn btn-primary font-size-16">Link</button>
                 <button type="button" onClick={this.fontSize} className="btn btn-primary font-size-16">Size</button>
-                <button type="button" onClick={this.fontColor} className="btn btn-primary font-size-16">Font Color</button>
+                <button type="button" onClick={this.fontColor} className="btn btn-primary font-size-16">FontColor</button>
                 <input id="fileupload" type="file" multiple="multiple" className="btn btn-primary"/>  
               </div>
               </div>
