@@ -1,0 +1,29 @@
+.parent-div
+{
+    border-radius: 24px;
+    border: 1px solid #dfe1e5;
+    padding: 16px;
+    padding-right: 16px;
+    overflow: auto;
+    height: 200px;
+}
+.fake-text-area
+{
+    width: auto;
+    outline: none;
+    height: 155px;
+
+}
+.font-size-16
+{
+    font-size: 16px !important;
+}
+.input-box
+{
+    height: 32px;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
