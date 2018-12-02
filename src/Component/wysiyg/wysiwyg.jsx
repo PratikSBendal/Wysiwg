@@ -14,22 +14,24 @@ class Wysiwyg extends Component {
     return (
       <div className="conatiner">
         <div className="row justify-content-center">
-          <div className="col-2">Wysiwyg Editor</div>
+        <div className="page-header font-weight-bold font-size-16">
+             Wysiwyg Editor
+          </div>
         </div>
         <div className="row justify-content-center">
           <div className="col-6">
             <div className=" panel panel-default">
              <div className="panel-heading">
-             <div>
+             <div style={{display:"inline-flex"}}>
              <div class="btn-group">
                 <button type="button" onClick={this.textBold} className="btn btn-primary font-size-16"><b>B</b></button>
                 <button type="button" onClick={this.textItalic} className="btn btn-primary font-size-16"><i>I</i></button>
                 <button type="button" onClick={this.textUnderline} className="btn btn-primary font-size-16"><u>U</u></button>
                 <button type="button" onClick={this.addhyperlink} className="btn btn-primary font-size-16">Link</button>
                 <button type="button" onClick={this.fontSize} className="btn btn-primary font-size-16">Size</button>
-                <button type="button" onClick={this.fontColor} className="btn btn-primary font-size-16">FontColor</button>
-                <input id="fileupload" type="file" multiple="multiple" className="btn btn-primary"/>  
+                <button type="button" onClick={this.fontColor} className="btn btn-primary font-size-16">Font Color</button>
               </div>
+               <input  id="fileupload" type="file" multiple="multiple" />
               </div>
              </div>
               <div className="panel-body">
@@ -40,7 +42,6 @@ class Wysiwyg extends Component {
                     className="fake-text-area"
                     contentEditable
                   />
-                 
                 </div> 
                 <div className="text-center pt-4">
                 <button type="button" onClick={this.submitData} className="btn btn-secondary font-size-16 ">Add</button>
@@ -85,16 +86,35 @@ class Wysiwyg extends Component {
     document.execCommand("createlink", false, link);
   };
   submitData = () => {
-    document.getElementById("outputarea").innerHTML = document.getElementById(
-      "fake_textarea"
-    ).innerHTML;
+  
+ var add = document.getElementById("fake_textarea").innerHTML;
+    if(add==''|| add==null)
+    {
+      alert("Add Something")
+      return false
+    }
+    else{
+    document.getElementById("outputarea").innerHTML = add;
+    return true 
+    }
+    
   };
   downloadHtml = () => {
-   
-    var save = document.getElementById("outputarea").innerHTML;
-    var filinput = document.getElementById("filename").value;
-    var blob = new Blob([save], { type: "html/plain;charset=utf-8" });
-    saveAs(blob, filinput + ".html");
+    
+    
+    var save = document.getElementById("filename").value;
+    if(save==null || save=='')
+    {
+      alert("Please Enter File Name") 
+    }
+    else
+    {
+      var filinput = document.getElementById("filename").value;
+      var blob = new Blob([save], { type: "html/plain;charset=utf-8" });
+      saveAs(blob, filinput + ".html");
+      document.getElementById("filename").value=null
+    }
+    
   };
 
 }

@@ -27,4 +27,5 @@ window.onload = function () {
             alert("This browser does not support HTML5 FileReader.");
         }
     }
+
 };
