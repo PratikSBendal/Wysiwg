@@ -33,9 +33,8 @@ class Wysiwyg extends Component {
                            
                      </div> 
                   </div>
-                 
                      <div className="image-section-upload">
-                         <div className="m-3 ">Width <input type="number" id="width"  min="100" max="500"/></div>
+                         <div className="m-3">Width <input type="number" id="width"  min="100" max="500"/></div>
                          <div className="m-3"> Height <input type="number" id="height" min="100" max="500"/></div>
                          <div className="m-2"> <input  id="fileupload" type="file" multiple/></div>
                     </div>  
@@ -45,7 +44,7 @@ class Wysiwyg extends Component {
               {/* input text area start */}
                 <div className="parent-div">
                   <div id="fake_textarea" name="text" className="fake-text-area" contentEditable/>
-                </div> 
+                </div>
               {/*input text area end */}
 
                 <div className="text-center pt-4">
